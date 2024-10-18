@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Access-Control-Allow-Methods':'POST',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ username, password })
         })
         .then(response => {
             if (!response.ok) {
