@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = document.getElementById('email').value;
+        const username = document.getElementById('email').value;
         const password = document.getElementById('password').value;
     
         fetch('http://127.0.0.1:5000/login/', {
