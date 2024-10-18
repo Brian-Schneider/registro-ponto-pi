@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             if (data.success) {
                 localStorage.setItem('accessToken', data.accessToken);
+                localStorage.setItem('role', data.role);
                 window.location.href = '/index.html';
             } else {
                 console.log(data);
