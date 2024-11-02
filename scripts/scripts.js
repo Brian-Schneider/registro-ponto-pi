@@ -1,12 +1,18 @@
 import { requireAuth } from './auth.js';
 import { updateTime, nomeFuncionarioLogado } from './utils.js';
 import { saveRegistro, fetchHistoryUser } from './api.js';
+import { logout } from './logout.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
     requireAuth();
 
     nomeFuncionarioLogado();
+
+    const logoutButton = document.getElementById('logout-button');
+    logoutButton.addEventListener('click', () => {
+        logout();
+    });
 
     let registro = {
         funcionario: localStorage.getItem('id'),

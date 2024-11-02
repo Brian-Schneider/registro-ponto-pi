@@ -1,11 +1,17 @@
 import { requireAuth } from './auth.js';
 import { updateTime, nomeFuncionarioLogado } from './utils.js';
 import { fetchFuncionarios, criarFuncionario, atualizarFuncionario } from './api.js';
+import { logout } from './logout.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     requireAuth();
 
     nomeFuncionarioLogado();
+
+    const logoutButton = document.getElementById('logout-button');
+    logoutButton.addEventListener('click', () => {
+        logout();
+    });
     
     const formCriarFuncionario = document.getElementById('formCriarFuncionario');
     const formAtualizarFuncionario = document.getElementById('formAtualizarFuncionario');
