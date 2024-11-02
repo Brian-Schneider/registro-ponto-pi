@@ -47,3 +47,18 @@ export async function fetchHistoryUser(userId) {
     const endpoint = `/registro/${userId}`;
     return await apiRequest(endpoint);
 }
+
+export async function criarFuncionario(body) {
+    const endpoint = '/funcionarios/cadastrar';
+    return await apiRequest(endpoint, 'POST', body);
+}
+
+export async function atualizarFuncionario(body) {
+    const endpoint = '/funcionarios/cadastrar';
+    return await apiRequest(endpoint, 'PUT', body);
+}
+
+export async function fetchFuncionarios() {
+    const endpoint = '/funcionarios';
+    return await apiRequest(endpoint);
+}
