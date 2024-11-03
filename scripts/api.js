@@ -43,7 +43,7 @@ export async function fetchRelatorio(funcionario, periodo) {
 export async function login(email, password) {
     const endpoint = '/login';
     const body = { email, password };
-    return await apiRequest(endpoint, 'POST', body);
+    return await apiRequest(endpoint, 'POST', body, {}, false);
 }
 
 export async function saveRegistro(body) {
