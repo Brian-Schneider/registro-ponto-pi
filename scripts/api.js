@@ -1,6 +1,6 @@
 const baseUrl = 'http://127.0.0.1:5000';
 
-async function apiRequest(endpoint, method = 'GET', body = null, headers = {}) {
+async function apiRequest(endpoint, method = 'GET', body = null, headers = {}, requireAuth = true) {
     const url = `${baseUrl}${endpoint}`;
     const options = {
         method,
@@ -9,6 +9,15 @@ async function apiRequest(endpoint, method = 'GET', body = null, headers = {}) {
             ...headers
         }
     };
+
+    if (requireAuth) {
+        const accessToken = localStorage.getItem('accessToken');
+        if (!accessToken || accessToken.split('.').length !== 3) {
+            console.error('Invalid or missing access token');
+            throw new Error('Invalid or missing access token');
+        }
+        options.headers['Authorization'] = `Bearer ${accessToken}`;
+    }
 
     if (body) {
         options.body = JSON.stringify(body);

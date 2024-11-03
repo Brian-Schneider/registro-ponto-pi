@@ -14,7 +14,20 @@ export function getUserRole() {
 
 export function requireRole(role) {
     const userRole = getUserRole();
-    if (userRole !== role) {
+    if (userRole !== "admin") {
         window.location.href = '/';
+    }
+}
+
+export function controleAcesso() {
+    const nivelDeAcesso = getUserRole();
+
+    const relatorioLink = document.getElementById('relatorio-link');
+    const funcionariosLink = document.getElementById('funcionarios-link');
+
+    // Exemplo de controle de acesso
+    if (nivelDeAcesso === "user") { // Supondo que 2 é o nível necessário para acessar o relatório
+        funcionariosLink.style.display = 'none';
+        relatorioLink.style.display = 'none';
     }
 }
