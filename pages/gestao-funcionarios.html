@@ -12,51 +12,57 @@
 <body>
     <header>
         <div class="logo">Logo da Empresa</div>
-        <nav>
-            <a href="/registro">Registro</a>
-            <a href="/relatorio">Relatório</a>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="/registro">Registro</a></li>
+                <li><a href="/relatorio">Relatório</a></li>
+            </ul>
         </nav>
-        <div>
+        <div class="user-actions">
             <button id="logout-button">Logout</button>
-        </div>
-        <div class="user-info">
-            <span id="nome-funcionario">Nome do Usuário</span>
-            <span id="hora-atual"></span>
+            <div class="user-info">
+                <span id="nome-funcionario">Nome do Usuário</span>
+                <span id="hora-atual"></span>
+            </div>
         </div>
     </header>
-    <h1>Gestão de Funcionários</h1>
-    <div id="admin-filtros">
-        <label for="funcionario">Funcionário:</label>
-        <input type="text" id="funcionario" placeholder="Nome do Funcionário">
-    </div>
-    <button id="filter-button">Filtrar</button>
-    <button onclick="abrirFormCriar()">Criar novo funcionário</button>
-    <table id="tabela-registros">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Cargo</th>
-                <th>Nivel de Acesso</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="tabelaFuncionarios">
-            <!-- Linhas populadas pelo JavaScript -->
-        </tbody>
-    </table>
-
-    <!-- Form Criar Funcionario -->
-    <div id="formCriar" style="display:none;">
+    <main>
+        <h1>Gestão de Funcionários</h1>
+        <div id="admin-filtros">
+            <label for="funcionario">Funcionário:</label>
+            <input type="text" id="funcionario" placeholder="Nome do Funcionário">
+        </div>
+        <div class="register-buttons">
+            <button id="filter-button">Filtrar</button>
+            <button onclick="abrirFormCriar()">Criar novo funcionário</button>
+        </div>
+        <div class="registros">
+            <table id="tabela-registros">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                        <th>Nivel de Acesso</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaFuncionarios">
+                    <!-- Linhas populadas pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div id="formCriar" class="modal">
         <h2>Criar Novo Funcionário</h2>
         <form id="formCriarFuncionario">
-            <label for="nnome">Nome:</label>
+            <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            <label for="sobrenomeo">Sobrenome:</label>
+            <label for="sobrenome">Sobrenome:</label>
             <input type="text" id="sobrenome" name="sobrenome" required>
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
+            <input type="email" id="email" name="email" required>
             <label for="cargo">Cargo:</label>
             <input type="text" id="cargo" name="cargo" required>
             <label for="nivelAcesso">Nivel de Acesso:</label>
@@ -66,13 +72,15 @@
             </select>
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
-            <button type="submit">Criar</button>
-            <button type="button" onclick="fecharFormCriar()">Cancelar</button>
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+            <div class="register-buttons">
+                <button type="submit">Criar</button>
+                <button type="button" onclick="fecharFormCriar()">Cancelar</button>
+            </div>
         </form>
     </div>
-
-    <!-- Form Atualizar Funcionario -->
-    <div id="formAtualizar" style="display:none;">
+    <div id="formAtualizar" class="modal">
         <h2>Atualizar Funcionário</h2>
         <form id="formAtualizarFuncionario">
             <input type="hidden" id="atualizarId" name="id">
@@ -81,7 +89,7 @@
             <label for="atualizarSobrenome">Sobrenome:</label>
             <input type="text" id="atualizarSobrenome" name="sobrenome" required>
             <label for="atualizarEmail">Email:</label>
-            <input type="text" id="atualizarEmail" name="email" required>
+            <input type="email" id="atualizarEmail" name="email" required>
             <label for="atualizarCargo">Cargo:</label>
             <input type="text" id="atualizarCargo" name="cargo" required>
             <label for="atualizarNivelAcesso">Nivel de Acesso:</label>
@@ -91,19 +99,19 @@
             </select>
             <label for="atualizarSenha">Senha:</label>
             <input type="password" id="atualizarSenha" name="senha" required>
-            <button type="submit">Atualizar</button>
-            <button type="button" onclick="fecharFormAtualizar()">Cancelar</button>
+            <label for="atualizarConfirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="atualizarConfirmarSenha" name="confirmarSenha" required>
+            <div class="register-buttons">
+                <button type="submit">Atualizar</button>
+                <button type="button" onclick="fecharFormAtualizar()">Cancelar</button>
+            </div>
         </form>
     </div>
-
-    <!-- Modal Detalhes Funcionario -->
-    <div id="modalDetalhes" style="display:none;">
+    <div id="modalDetalhes" class="modal">
         <h2>Detalhes de Funcionário</h2>
         <p id="detalhesFuncionario"></p>
-        <button type="button" onclick="fecharModalDetalhes()">fechar</button>
+        <button type="button" onclick="fecharModalDetalhes()">Fechar</button>
     </div>
-
     <script type='module' src="/scripts/gestao-funcionarios.js"></script>
-   
 </body>
 </html>

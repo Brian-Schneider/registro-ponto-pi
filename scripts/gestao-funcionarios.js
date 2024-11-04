@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const cargo = document.getElementById('cargo').value;
         const role = document.getElementById('nivelAcesso').value;
         const password = document.getElementById('senha').value;
+        const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+        if (password !== confirmarSenha) {
+            alert('As senhas não coincidem. Por favor, tente novamente.');
+            return;
+        }
 
         try {
             const body = {
@@ -53,7 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         try {
             const funcionario = funcionarioInput.value.trim();
-            const funcionarios = await fetchFuncionariosByName(funcionario);
+            let funcionarios = await fetchFuncionariosByName(funcionario);
+
+            funcionarios.sort((a, b) => a.nome.localeCompare(b.nome));
+
             tabelaFuncionarios.innerHTML = ''; // Clear the current table body
 
             funcionarios.forEach(funcionario => {
@@ -85,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const cargo = document.getElementById('atualizarCargo').value;
         const role = document.getElementById('atualizarNivelAcesso').value;
         const password = document.getElementById('atualizarSenha').value;
+
+        const confirmarSenha = document.getElementById('atualizarConfirmarSenha').value;
+
+        if (password !== confirmarSenha) {
+            alert('As senhas não coincidem. Por favor, tente novamente.');
+            return;
+        }
 
         try {
 
@@ -139,7 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function popularTabelaFuncionarios() {
         try {
-            const funcionarios = await fetchFuncionarios();
+            let funcionarios = await fetchFuncionarios();
+
+
+            funcionarios.sort((a, b) => a.nome.localeCompare(b.nome));
+
             tabelaFuncionarios.innerHTML = '';
 
             funcionarios.forEach(funcionario => {

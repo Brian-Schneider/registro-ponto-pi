@@ -9,16 +9,18 @@
 <body>
     <header>
         <div class="logo">Logo da Empresa</div>
-        <nav>
-            <a href="/funcionarios">Funcionários</a>
-            <a href="/registro">Registro</a>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="/registro">Registro</a></li>
+                <li><a href="/relatorio">Relatório</a></li>
+            </ul>
         </nav>
-        <div>
+        <div class="user-actions">
             <button id="logout-button">Logout</button>
-        </div>
-        <div class="user-info">
-            <span id="nome-funcionario">Nome do Usuário</span>
-            <span id="hora-atual"></span>
+            <div class="user-info">
+                <span id="nome-funcionario">Nome do Usuário</span>
+                <span id="hora-atual"></span>
+            </div>
         </div>
     </header>
     <main>
