@@ -1,4 +1,4 @@
-const baseUrl = 'http://127.0.0.1:5000';
+const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5000';
 
 async function apiRequest(endpoint, method = 'GET', body = null, headers = {}, requireAuth = true) {
     const url = `${baseUrl}${endpoint}`;
