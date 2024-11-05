@@ -1,7 +1,11 @@
-const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:5000';
+async function getBaseUrl() {
+    const response = await fetch('/api/getBaseUrl');
+    const baseUrl = await response.text();
+    return baseUrl;
+}
 
 async function apiRequest(endpoint, method = 'GET', body = null, headers = {}, requireAuth = true) {
-    const url = `${baseUrl}${endpoint}`;
+    const url = await getBaseUrl() + endpoint;
     const options = {
         method,
         headers: {
