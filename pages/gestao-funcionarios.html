@@ -2,7 +2,7 @@
 <!-- Detalhes do funcionario -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,15 +27,17 @@
         </div>
     </header>
     <main>
-        <h1>Gestão de Funcionários</h1>
-        <div id="admin-filtros">
-            <label for="funcionario">Funcionário:</label>
-            <input type="text" id="funcionario" placeholder="Nome do Funcionário">
-        </div>
-        <div class="register-buttons">
-            <button id="filter-button">Filtrar</button>
-            <button onclick="abrirFormCriar()">Criar novo funcionário</button>
-        </div>
+        <h1 class="titulo">Gestão de Funcionários</h1>
+        <section id="container-funcionarios">
+            <div class="funcionarios-filtros">
+                <label for="funcionario">Funcionário:</label>
+                <input type="text" id="funcionario" placeholder="Nome do Funcionário">
+            </div>
+            <div class="register-buttons">
+                <button id="filter-button" class="btn-filtrar">Filtrar</button>
+                <button onclick="abrirFormCriar()">Criar novo funcionário</button>
+            </div>
+        </section>
         <div class="registros">
             <table id="tabela-registros">
                 <thead>

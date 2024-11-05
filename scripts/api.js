@@ -1,6 +1,7 @@
 async function getBaseUrl() {
     const response = await fetch('/api/getBaseUrl');
     const baseUrl = await response.text();
+    console.log('Base URL response:', baseUrl);
     return baseUrl;
 }
 

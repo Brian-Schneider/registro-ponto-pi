@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,22 +24,22 @@
         </div>
     </header>
     <main>
-        <h1>Relatórios por Vários Períodos</h1>
+        <h1 class="titulo">Relatórios por Vários Períodos</h1>
         <section id="filtros">
-            <div id="periodo-filtros">
+            <div class="periodo-filtros">
                 <label for="periodo">Período:</label>
-                <div>
+                <div class="periodo-inputs">
                     <label for="periodo-inicio">De:</label>
                     <input type="date" id="periodo-inicio" placeholder="De:">
                     <label for="periodo-fim">Até:</label>
                     <input type="date" id="periodo-fim" placeholder="Até:">
                 </div>
             </div>
-            <div id="admin-filtros">
+            <div class="funcionarios-filtros">
                 <label for="funcionario">Funcionário:</label>
                 <input type="text" id="funcionario" placeholder="Nome do Funcionário">
             </div>
-            <button id="filter-button">Filtrar</button>
+            <button id="filter-button" class="btn-filtrar">Filtrar</button>
         </section>
         <section class="registros">
             <h2>Relatório de Pontos</h2>
