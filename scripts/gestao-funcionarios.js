@@ -56,6 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filtrarButton.addEventListener('click', debounce(async () => {
 
+        fecharFormCriar();
+        fecharFormAtualizar();
+        fecharModalDetalhes();
+
         
         try {
             const funcionario = funcionarioInput.value.trim();
@@ -123,6 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function abrirFormCriar() {
+        fecharFormAtualizar();
+        fecharModalDetalhes();
         document.getElementById('formCriar').style.display = 'block';
     }
 
@@ -131,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function abrirFormAtualizar(id, nome, sobrenome, email, cargo, role) {
+        fecharFormCriar();
+        fecharModalDetalhes();
         document.getElementById('atualizarId').value = id;
         document.getElementById('atualizarNome').value = nome;
         document.getElementById('atualizarSobrenome').value = sobrenome;
@@ -145,6 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function abrirModalDetalhes(detalhes) {
+        fecharFormAtualizar();
+        fecharFormCriar();
         document.getElementById('detalhesFuncionario').innerText = detalhes;
         document.getElementById('modalDetalhes').style.display = 'block';
     }

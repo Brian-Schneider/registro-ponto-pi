@@ -52,7 +52,7 @@ body {
 
 #loginForm button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #3D8542;
     color: white;
     border: none;
     border-radius: 3px;
@@ -60,12 +60,12 @@ body {
 }
 
 #loginForm button:hover {
-    background-color: #45a049;
+    background-color: #387A3D;
 }
 
 /* Header Styles */
 header {
-    background-color: #4CAF50;
+    background-color: #3D8542;
     color: white;
     padding: 10px;
     display: flex;
@@ -115,7 +115,7 @@ nav {
 }
 
 #logout-button {
-    background-color: #f44336;
+    background-color: #d32f2f;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -123,7 +123,7 @@ nav {
 }
 
 #logout-button:hover {
-    background-color: #d32f2f;
+    background-color: #B92727;
 }
 
 /* Main Content Styles */
@@ -162,7 +162,7 @@ th, td {
 }
 
 #tabela-registros thead tr {
-    background-color: #009879;
+    background-color: #00856A;
     color: #ffffff;
     text-align: left;
 }
@@ -231,7 +231,7 @@ input[type="date"], input[type="text"] {
     display: block;
     width: 100%;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #0071EB;
     color: white;
     border: none;
     border-radius: 5px;
@@ -264,7 +264,7 @@ input[type="date"], input[type="text"] {
     display: block;
     width: 100%;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #0071EB;
     color: white;
     border: none;
     border-radius: 5px;
@@ -283,7 +283,6 @@ input[type="date"], input[type="text"] {
     cursor: pointer;
 }
 
-
 /* Modal Styles */
 .modal {
     position: fixed;
@@ -295,7 +294,6 @@ input[type="date"], input[type="text"] {
     border: 1px solid black;
     z-index: 1000;
     display: none; /* Hide modals by default */
-
 }
 
 #modalDetalhes {
@@ -330,3 +328,16 @@ footer {
     }
 }
 
+/* Accessibility Enhancements */
+a:focus, button:focus, input:focus {
+    outline: 2px solid #0056b3;
+}
+
+a, button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover, button:hover {
+    background-color: #0056b3;
+    color: white;
+}

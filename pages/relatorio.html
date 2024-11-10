@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Appointments</title>
+    <title>Relatório de Pontos</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">Logo da Empresa</div>
+        <div class="logo" aria-label="Logo da Empresa">Lá em Casa Gastronomia</div>
         <nav aria-label="Navegação por página">
             <ul class="nav-links">
-                <li><a href="/funcionarios">Funcionários</a></li>
-                <li><a href="/registro">Registro</a></li>
+                <li><a href="/funcionarios" tabindex="0">Gestão de Funcionários</a></li>
+                <li><a href="/registro" tabindex="0">Registro de Pontos</a></li>
             </ul>
         </nav>
         <div class="user-actions">
-            <button id="logout-button">Logout</button>
+            <button id="logout-button" aria-label="Logout" tabindex="0">Logout</button>
             <div class="user-info">
                 <span id="nome-funcionario">Nome do Usuário</span>
                 <span id="hora-atual"></span>
@@ -30,16 +30,16 @@
                 <label for="periodo">Período:</label>
                 <div class="periodo-inputs">
                     <label for="periodo-inicio">De:</label>
-                    <input type="date" id="periodo-inicio" placeholder="De:">
+                    <input type="date" id="periodo-inicio" placeholder="De:" tabindex="0">
                     <label for="periodo-fim">Até:</label>
-                    <input type="date" id="periodo-fim" placeholder="Até:">
+                    <input type="date" id="periodo-fim" placeholder="Até:" tabindex="0">
                 </div>
             </div>
             <div class="funcionarios-filtros">
                 <label for="funcionario">Funcionário:</label>
-                <input type="text" id="funcionario" placeholder="Nome do Funcionário">
+                <input type="text" id="funcionario" placeholder="Nome do Funcionário" tabindex="0">
             </div>
-            <button id="filter-button" class="btn-filtrar">Filtrar</button>
+            <button id="filter-button" class="btn-filtrar" aria-label="Filtrar Relatório" tabindex="0">Filtrar</button>
         </section>
         <section class="registros">
             <h2>Relatório de Pontos</h2>

@@ -8,15 +8,15 @@
 </head>
 <body>
     <header>
-        <div class="logo">Logo da Empresa</div>
+        <div class="logo" aria-label="Logo da Empresa">Lá em Casa Gastronomia</div>
         <nav aria-label="Navegação por página">
             <ul class="nav-links">
-                <li><a href="/funcionarios" id="funcionarios-link">Funcionários</a></li>
-                <li><a href="/relatorio" id="relatorio-link">Relatório</a></li>
+                <li><a href="/funcionarios" id="funcionarios-link">Gestão de Funcionários</a></li>
+                <li><a href="/relatorio" id="relatorio-link">Relatório de Pontos</a></li>
             </ul>
         </nav>
         <div class="user-actions">
-            <button id="logout-button">Logout</button>
+            <button id="logout-button" aria-label="Logout">Logout</button>
             <div class="user-info">
                 <span id="nome-funcionario">Nome do Usuário</span>
                 <span id="hora-atual"></span>
@@ -24,11 +24,12 @@
         </div>
     </header>
     <main>
+        <h1 class="titulo">Registrar horários</h1>
         <section class="registrar-buttons">
-            <button id="entrada">Entrada</button>
-            <button id="intervalo">Intervalo</button>
-            <button id="retorno">Retorno</button>
-            <button id="saida">Saída</button>
+            <button id="entrada" aria-label="Registrar Entrada">Entrada</button>
+            <button id="intervalo" aria-label="Registrar Intervalo">Intervalo</button>
+            <button id="retorno" aria-label="Registrar Retorno">Retorno</button>
+            <button id="saida" aria-label="Registrar Saída">Saída</button>
         </section>
         <section class="registros">
             <h2>Histórico de Registros</h2>
@@ -49,7 +50,7 @@
         </section>
     </main>
     <footer>
-        <nav>
+        <nav aria-label="Navegação por rodapé">
             <a href="#">Dashboard</a>
             <a href="#">Relatórios</a>
             <a href="#">Suporte</a>
